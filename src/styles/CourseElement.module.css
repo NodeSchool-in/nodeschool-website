@@ -1,0 +1,119 @@
+.courseHeadContainer {
+  width: 90%;
+  margin: auto;
+  padding: 1% 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.courseDetailsSection {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.textCourseName {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.courseSummary {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.lastUpdate {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.befefits {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.eachBenefits {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.befefitsHead {
+  font-size: 14px;
+}
+
+.coursePriceSection {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+}
+
+.courseFeesHead {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.coursePrice {
+  font-size: 20px;
+  font-weight: 400;
+  color: red;
+}
+
+.enrollButton {
+  border: 1px solid rgb(252, 121, 121);
+  height: 50px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: rgb(247, 165, 165);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.enrollButton:hover {
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 100px) {
+  .courseHeadContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0%;
+  }
+  .textCourseName {
+    text-align: center;
+    font-size: 20px;
+  }
+  .courseSummary {
+    text-align: center;
+  }
+  .courseDetailsSection {
+    width: 100%;
+  }
+  .coursePriceSection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .courseFeesHead {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,116 @@
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.allRightsReserve {
+  background-color: antiquewhite;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightsText {
+  margin-right: 5px;
+}
+
+.socialMediaCont {
+  padding: 2% 5%;
+  display: flex;
+  gap: 20px;
+}
+
+.eleText {
+  color: black;
+  border: 1px solid rgb(202, 202, 202);
+  height: 30px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.footerDataContainer{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2% 5%;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(176, 176, 176);
+}
+
+.eachFooterData{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footerContainHead{
+  font-size: 18px;
+  color: #404040;
+  font-weight: 500;
+}
+
+.dataEle{
+  font-size: 14px;
+  color: #404040;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.dataEle:hover{
+  font-size: 14px;
+  color: #ff0000;
+  font-weight: 400;
+}
+
+.dataEleContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactContainer{
+  height: 100px;
+  padding: 2% 5%;
+  background-color: #c0c0c0;
+}
+.nodeSchoolBanner{
+  font-size: 30px;
+  margin-top: -30px;
+  display: flex;
+  justify-content: center;
+}
+.nodeSchoolBanner2{
+  /* border: 1px solid red; */
+  padding: 20px ;
+  background-color: white;
+  border-radius: 50px;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1000px) {
+  .footerDataContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .footerContainHead{
+    text-decoration: underline;
+  }
+}
+@media only screen and (max-width: 1000px) and (min-width: 100px) {
+  .footerDataContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 10px;
+  }
+  .footerContainHead{
+    text-decoration: underline;
+  }
+}

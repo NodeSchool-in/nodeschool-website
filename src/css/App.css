@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+li {
+    display: inline;
+    padding: 0 20px;
+    font-size: 20px;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.color-red{
+    color: #F2042F;
+}
+
+.app {
+ display: flex;
+ flex-direction: column;
+}
+button{
+   background-color: aquamarine; 
+   border: 1px solid green;
+   border-radius:  3px;
+   font-size: 20px;
+   padding: 10px;
+   width: 30%;
+}
+
+.animal-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.nav .logo {
+   margin: 3px 50px; 
+}
+.nav .logo img {
+    height: 20px;
+}
+
+.nav .navItem ul li img{
+   height: 12px;
+}
+
+.banner{
+    background-image: url(https://in.sugarcosmetics.com/desc-images/Rectangle_background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 50px 0;
+    padding: 20px 50px;
+}
+
+.banner .bannerContent{
+    margin: 10px;
+    padding: 0 50px;
+}
+
+.banner .bannerContent h1{
+   font-weight: bold;
+   font-size: 45px;
+}
+.review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 50px;
+    font-size: 20px;
+}
+
+.review .headline {
+    font-weight: lighter;
+    font-size: 30px;
+}
+.common-text {
+    font-weight: lighter;
+}
+
+.color-purple {
+    font-size: medium;
+    color: blueviolet;
+}
+
+.f30{
+    font-size: 30px;
+    font-weight: 900;
+}
+.f20{
+    font-size: 20px;
+    font-weight: 900;
+}
+.f12{
+    font-size: 12px;
+    font-weight: 500;
+}
+.f14{
+    font-size: 14px;
+    font-weight: 500;
+}

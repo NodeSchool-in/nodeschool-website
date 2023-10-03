@@ -1,0 +1,35 @@
+.bannerContainer {
+  background-image: url(https://in.sugarcosmetics.com/desc-images/Rectangle_background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* padding: 20px 50px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5%;
+}
+
+.imageContainer {
+  width: 30%;
+}
+
+.bannerContentContainer {
+  width: 70%;
+}
+
+@media only screen and (max-width: 1060px) and (min-width: 100px) {
+  .bannerContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .imageContainer {
+    width: 100%;
+    text-align: center;
+  }
+}

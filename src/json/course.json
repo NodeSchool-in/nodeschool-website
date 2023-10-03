@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "Fullstack MERN developer",
+    "content": "Learn to build entire web applications from start to finish on one of the most versatile tech stacks : MongoDB, Express.js, React.js and Node.js (MERN stack)"
+  },
+  {
+    "id": "2",
+    "title": "Node.js Backend developer",
+    "content": "Learn to build entire web applications from start to finish on one of the most versatile tech stacks : MongoDB, Express.js, React.js and Node.js (MERN stack)"
+  },
+  {
+    "id": "3",
+    "title": "React.js Frontend developer",
+    "content": "Learn to build entire web applications from start to finish on one of the most versatile tech stacks : MongoDB, Express.js, React.js and Node.js (MERN stack)"
+  },
+  {
+    "id": "4",
+    "title": "Javascript Developer",
+    "content": "Learn to build entire web applications from start to finish on one of the most versatile tech stacks : MongoDB, Express.js, React.js and Node.js (MERN stack)"
+  }
+]
