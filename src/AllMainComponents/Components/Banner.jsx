@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <div className={Styles.bannerContainer}>
       <div className={Styles.imageContainer}>
-        <img src={bannerImage} style={{ objectFit: 'contain' }} />
+        <img src={bannerImage} style={{ objectFit: 'contain' }} alt='Master Node.js with Prashant' />
       </div>
       <div className={`bannerContent ${Styles.bannerContentContainer}`}>
         <h1>Hi, I am Prashant</h1>

@@ -2,6 +2,7 @@ import React from 'react';
 import Style from '../../styles/CohortCard.module.css';
 import { Divider, Alert } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
+import HtmlParser from './HtmlParser';
 
 const CohortCard = ({ cohortData }) => {
     return (
@@ -10,7 +11,7 @@ const CohortCard = ({ cohortData }) => {
             <div className={`${Style.productCardContent}`}>
                 <div>{cohortData?.startsFrom}</div>
                 <div>{cohortData?.durationAndSeats}</div>
-                <div>{cohortData?.time}</div> <br />
+                <HtmlParser htmlString={cohortData?.time}/><br />
                 <div><strong>Buy Now</strong></div>
                 <div style={{ color: 'red', marginBottom: '1rem'}}><strong>{cohortData?.price}</strong> <span style={{ color: '#4a4a4a' }}>({cohortData?.tax})</span></div>
 

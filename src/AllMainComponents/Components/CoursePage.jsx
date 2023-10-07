@@ -12,7 +12,8 @@ import { LuDatabase } from 'react-icons/lu';
 import { BiLogoNodejs , BiLogoAws } from 'react-icons/bi';
 import {SiRedis , SiSpringsecurity} from 'react-icons/si'
 import { MdOutlineSecurity } from 'react-icons/md'
-import {Helmet} from 'react-helmet-async'
+import SeoHelmet from '../CommonComponent/SeoHelmet';
+import HtmlParser from '../CommonComponent/HtmlParser';
 
 
 
@@ -40,10 +41,8 @@ const CoursePage = () => {
 
   return pageNotFound ? <PageNotFound /> : (
     <>
-     <Helmet>
-       <title>Nodejs backend development masterclass</title>
-       <link rel="canonical" href="https://nodeschool.in//" />
-     </Helmet>
+    <SeoHelmet title={courseJson.title} href={courseJson.url} desc={courseJson.description}/>
+    
     <div className='main_container'>
       <div className='main_banner'>
         <div className='main_banner_headline'>
@@ -53,7 +52,7 @@ const CoursePage = () => {
             }
             return item + " "
           })}</h1>
-          <p>{courseJson.subTitle}</p><br />
+          <HtmlParser htmlString={courseJson?.subTitle} />
           <Alert severity="info" style={{ fontSize: '1.2rem', padding: '10px', display: 'flex', justifyContent: 'center' }}>{courseJson?.NextBatchStartDate}</Alert>
         </div>
       </div>

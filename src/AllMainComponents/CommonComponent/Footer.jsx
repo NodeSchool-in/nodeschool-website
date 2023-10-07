@@ -1,5 +1,6 @@
 import React from 'react';
 import Style from '../../styles/Footer.module.css';
+import {Link} from 'react-router-dom'
 
 const socialMedia = [
   {
@@ -48,7 +49,7 @@ const footerData = [
       {
         id: '22',
         name: 'Node.js Backend developer',
-        link: '/',
+        link: '/course/nodejs-backend-development-masterclass',
       },
       {
         id: '23',
@@ -69,17 +70,17 @@ const footerData = [
       {
         id: '31',
         name: 'About Me',
-        link: '/',
+        link: '/about',
       },
       {
         id: '32',
         name: 'Terms and Condition',
-        link: '/',
+        link: '/terms-conditions',
       },
       {
         id: '32',
         name: 'Privacy Policy',
-        link: '/',
+        link: '/privacy-policy',
       },
     ],
   },
@@ -122,7 +123,7 @@ const FooterContent = () => {
           <div className={Style.footerContainHead}>{data?.title}</div>
           <div className={Style.dataEleContainer}>
             {data?.data?.map((ele) => (
-              <div className={Style.dataEle}>{ele?.name}</div>
+              <Link className={Style.dataEle} to={ele?.link}>{ele?.name}</Link>
             ))}
           </div>
         </div>

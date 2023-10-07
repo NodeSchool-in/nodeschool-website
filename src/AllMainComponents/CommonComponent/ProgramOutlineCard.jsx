@@ -8,7 +8,7 @@ const ProgramOutlineCard = ({ program }) => {
         <div className={Style.displayCardContainer}>
             <div className={`f20 ${Style.cardTitle}`}>{program?.week}</div>
             <div className={`${Style.productCardContent}`}>
-             <div>{program?.objective}</div> 
+             <div style={{ fontSize: '0.9rem', fontWeight:'bold'}}>{program?.objective}</div> 
              <Divider />
              <div className={Style.topic}>
                 <ul>

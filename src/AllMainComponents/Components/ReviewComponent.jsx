@@ -17,8 +17,8 @@ const ReviewComponent = ({ reviews }) => {
         </div>
       </div>
       <div className={Style.dataContainer}>
-        {reviews.map((data) => (
-          <ReviewCard data={data} />
+        {reviews.map((data,index) => (
+          <ReviewCard data={data} key={index}/>
         ))}
       </div>
     </div>

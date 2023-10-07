@@ -9,22 +9,24 @@ import SeoHelmet from './CommonComponent/SeoHelmet'
 const MainPage = () => {
   const [reviews, setReviews] = useState([]);
   const [courses, setCourses] = useState([]);
+  const [seo, setSeo] = useState({});
 
   const updateUseState = async ()=>{
     let content = await api_homePage();
     if (content?.data?.statusId === 1) {
       setCourses(content?.data?.data?.courses);
       setReviews(content?.data?.data?.reviews);
+      setSeo(content?.data?.data?.seo)
     }
   }
-
+  
   useEffect(() => {
       updateUseState()
   }, []);
 
   return (
     <>
-    <SeoHelmet title='Learn nodejs from prashant| NodeJs masterclass | nodeschool.in' href='https://nodeschool.in/'/>
+    <SeoHelmet title={seo.title} href={seo.url} desc={seo.description}/>
     <div>
       {/* <Navbar /> */}
       <Banner />

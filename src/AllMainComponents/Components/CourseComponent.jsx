@@ -17,8 +17,8 @@ const CourseComponent = ({ courses }) => {
         </div>
       </div>
       <div className={Style.dataContainer}>
-        {courses.map((data) => (
-          <CourseCard data={data} />
+        {courses.map((data,index) => (
+          <CourseCard data={data} key={index}/>
         ))}
       </div>
     </div>

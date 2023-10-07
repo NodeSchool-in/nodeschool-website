@@ -7,6 +7,7 @@ import PageNotFound from "../AllMainComponents/Components/PageNotFound";
 import Navbar from '../AllMainComponents/CommonComponent/Navbar';
 import Footer from '../AllMainComponents/CommonComponent/Footer';
 import About from '../AllMainComponents/Components/About';
+import Legal from '../AllMainComponents/Components/Legal'
 
 
 const AppRouter = () => {
@@ -16,8 +17,11 @@ const AppRouter = () => {
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/about' element={<About />} />
-        <Route path='/course' element={<CourseElement />} />
+        {/* <Route path='/course' element={<CourseElement />} /> */}
         <Route path='/course/:handle' element={<CoursePage />} />
+        <Route path='/refund-policy' element={<Legal type="refund" />} />
+        <Route path='/terms-conditions' element={<Legal type="terms" />} />
+        <Route path='/privacy-policy' element={<Legal type="privacy" />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
       <Footer />

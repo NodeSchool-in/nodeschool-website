@@ -7,20 +7,19 @@
 body {
     
     font-family: 'Inter', sans-serif;
-    font-weight: bold;
     background-color: #fff;
     color: #333;
     line-height: 1.6;
 }
 
-ul {
+/* ul {
     list-style-type: none;
 }
 li {
     display: inline;
     padding: 0 20px;
     font-size: 20px;
-}
+} */
 a {
     color: #333;
     text-decoration: none;
