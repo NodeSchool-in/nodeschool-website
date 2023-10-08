@@ -13,10 +13,7 @@ import { Link } from 'react-router-dom';
 
 
 let courses = [
-  'Fullstack MERN developer',
-  'Node.js Backend developer',
-  'React.js Frontend developer',
-  'Javascript Developer',
+  {'course':'Node.js Backend developer','url':'/course/nodejs-backend-development-masterclass'},
 ];
 
 const Navbar = () => {
@@ -65,7 +62,7 @@ const Navbar = () => {
             }}
           >
             {courses.map((ele) => (
-              <MenuItem onClick={handleClose}>{ele}</MenuItem>
+              <MenuItem onClick={handleClose}><Link to={ele.url}>{ele.course}</Link></MenuItem>
             ))}
           </Menu>
           <div>
@@ -121,7 +118,7 @@ const Navbar = () => {
                 <AccordionDetails>
                   <Typography>
                     {courses.map((ele) => (
-                      <MenuItem onClick={handleClose}>{ele}</MenuItem>
+                      <MenuItem onClick={handleClose}><Link to={ele.url}>{ele.course}</Link></MenuItem>
                     ))}
                   </Typography>
                 </AccordionDetails>

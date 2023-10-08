@@ -42,25 +42,10 @@ const footerData = [
     title: 'Courses',
     data: [
       {
-        id: '21',
-        name: 'Fullstack MERN developer',
-        link: '/',
-      },
-      {
         id: '22',
-        name: 'Node.js Backend developer',
+        name: 'Node.js Backend development masterclass',
         link: '/course/nodejs-backend-development-masterclass',
-      },
-      {
-        id: '23',
-        name: 'React.js Frontend developer',
-        link: '/',
-      },
-      {
-        id: '24',
-        name: 'Javascript Developer',
-        link: '/',
-      },
+      }
     ],
   },
   {
@@ -81,6 +66,11 @@ const footerData = [
         id: '32',
         name: 'Privacy Policy',
         link: '/privacy-policy',
+      },
+      {
+        id: '33',
+        name: 'contact',
+        link: '/contact',
       },
     ],
   },

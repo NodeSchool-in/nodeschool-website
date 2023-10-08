@@ -10,7 +10,7 @@ import PageNotFound from './PageNotFound';
 import { TbBrandJavascript } from 'react-icons/tb';
 import { LuDatabase } from 'react-icons/lu';
 import { BiLogoNodejs , BiLogoAws } from 'react-icons/bi';
-import {SiRedis , SiSpringsecurity} from 'react-icons/si'
+import {SiRedis} from 'react-icons/si'
 import { MdOutlineSecurity } from 'react-icons/md'
 import SeoHelmet from '../CommonComponent/SeoHelmet';
 import HtmlParser from '../CommonComponent/HtmlParser';

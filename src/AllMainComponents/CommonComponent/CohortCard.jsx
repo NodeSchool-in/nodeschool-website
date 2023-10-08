@@ -3,6 +3,7 @@ import Style from '../../styles/CohortCard.module.css';
 import { Divider, Alert } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import HtmlParser from './HtmlParser';
+import { Link } from 'react-router-dom';
 
 const CohortCard = ({ cohortData }) => {
     return (
@@ -22,7 +23,7 @@ const CohortCard = ({ cohortData }) => {
             </div>
             <Alert severity="warning">{cohortData?.note}</Alert>
             <Alert severity="info">{cohortData?.doubtsClaification}</Alert>
-            <div className={Style.cardButton}>Register</div>
+            <Link className={Style.cardButton} to="/contact">Register</Link>
         </div>
     );
 };

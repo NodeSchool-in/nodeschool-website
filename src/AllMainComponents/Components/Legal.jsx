@@ -1,9 +1,10 @@
 
+import { useEffect } from "react";
 import HtmlParser from "../CommonComponent/HtmlParser";
-
-function Legal({type}) {
-const pages = {
-    termscondition:`<div style="display:flex;flex-direction:column; padding:1rem; margin:5px; margin-bottom:1.5rem">
+import SeoHelmet from "../CommonComponent/SeoHelmet";
+function Legal({ type }) {
+    const pages = {
+        termscondition: `<div style="display:flex;flex-direction:column; padding:1rem; margin:5px; margin-bottom:1.5rem">
     <h2>Terms and Conditions</h2>
     <div style="font-size:0.9rem;">Last updated: Oct 07, 2023</div> <br/>
     <p style="font-weight:normal; font-size:0.9rem ">These terms and conditions outline the rules and regulations for the use of nodeschool.in Website, located at https://nodeschool.in. <br />
@@ -41,7 +42,7 @@ const pages = {
      <br/>
     As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
     </div>`,
-    policy:`<div style="display:flex;flex-direction:column; padding:1rem; margin:5px; margin-bottom:1.5rem">
+        policy: `<div style="display:flex;flex-direction:column; padding:1rem; margin:5px; margin-bottom:1.5rem">
     <h2>Privacy Policy</h2>
     <div style="font-size:0.9rem;">Last updated: Oct 07, 2023</div> <br/>
     <p style="font-weight:normal; font-size:0.9rem ">
@@ -133,13 +134,33 @@ const pages = {
         promptly remove such information from our records.
     </p>
 </div>`
- }
-    if(type == 'terms'){
+    }
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[])
+    if (type == 'terms') {
+        return (
+            <>
+                <SeoHelmet
+                    title="Terms and Conditions | Nodeschool.in"
+                    desc="Terms and Terms and Conditions"
+                    href="https://nodeschool.in/terms-conditions" />
+                <HtmlParser htmlString={pages.termscondition} />
+            </>
+        )
+    } else if (type == 'refund') {
         return <HtmlParser htmlString={pages.termscondition} />
-    }else if(type== 'refund'){
-        return <HtmlParser htmlString={pages.termscondition} />
-    }else if(type== 'privacy'){
-        return <HtmlParser htmlString={pages.policy} />
+    } else if (type == 'privacy') {
+
+        return(
+            <>
+            <SeoHelmet
+                    title="Privacy Policy| Nodeschool.in"
+                    desc="privacy policy"
+                    href="https://nodeschool.in/privacy-policy" />
+            <HtmlParser htmlString={pages.policy} />
+            </>
+        ) 
     }
 }
 

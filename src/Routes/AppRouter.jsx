@@ -8,6 +8,7 @@ import Navbar from '../AllMainComponents/CommonComponent/Navbar';
 import Footer from '../AllMainComponents/CommonComponent/Footer';
 import About from '../AllMainComponents/Components/About';
 import Legal from '../AllMainComponents/Components/Legal'
+import Contact from '../AllMainComponents/Components/contact';
 
 
 const AppRouter = () => {
@@ -21,6 +22,7 @@ const AppRouter = () => {
         <Route path='/course/:handle' element={<CoursePage />} />
         <Route path='/refund-policy' element={<Legal type="refund" />} />
         <Route path='/terms-conditions' element={<Legal type="terms" />} />
+        <Route path='/contact' element={ <Contact/>} />
         <Route path='/privacy-policy' element={<Legal type="privacy" />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
