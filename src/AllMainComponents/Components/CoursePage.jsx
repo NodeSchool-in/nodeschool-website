@@ -22,12 +22,14 @@ const CoursePage = () => {
   const { handle } = useParams()
   let [courseJson, setCourseJson] = useState({});
   let [pageNotFound, setPageNotFound] = useState(false);
+  let [seo, setSeo] = useState({});
 
   const updateUseState = async () => {
     const courseData = await api_getCourseDataByHandle(handle);
     console.log("data", courseData.data.data)
     if (courseData.data.statusId == 1 && courseData.data.data.length > 0) {
       setCourseJson(courseData.data.data[0])
+      setSeo(courseData.data.data[0].seo)
     } else {
       setPageNotFound(true)
     }
@@ -41,14 +43,14 @@ const CoursePage = () => {
 
   return pageNotFound ? <PageNotFound /> : (
     <>
-    <SeoHelmet title={courseJson.title} href={courseJson.url} desc={courseJson.description}/>
+    <SeoHelmet title={seo.title} href={seo.url} desc={seo.description}/>
     
     <div className='main_container'>
       <div className='main_banner'>
         <div className='main_banner_headline'>
           <h1>{courseJson?.title?.split(" ").map((item, index) => {
             if ((index % 2 == 0)) {
-              return <span style={{ color: 'red' }}>{item + " "}</span>
+              return <span style={{ color: 'red' }} key={index}>{item + " "}</span>
             }
             return item + " "
           })}</h1>

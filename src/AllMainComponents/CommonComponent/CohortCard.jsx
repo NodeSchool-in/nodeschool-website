@@ -18,7 +18,7 @@ const CohortCard = ({ cohortData }) => {
 
                 <Divider />
                 <div style={{marginTop:'1rem'}}>YOU'LL GET</div>
-                {cohortData?.whatyouWillGet?.map(point=><div className='normal_text_div'><CheckIcon style={{color: 'green', padding:'2px', margin:'5px 3px 0 0', fontSize:'1.2rem'}}/><span>{point}</span></div>)}
+                {cohortData?.whatyouWillGet?.map(point=><div className='normal_text_div' key={point}><CheckIcon style={{color: 'green', padding:'2px', margin:'5px 3px 0 0', fontSize:'1.2rem'}}/><span>{point}</span></div>)}
                 
             </div>
             <Alert severity="warning">{cohortData?.note}</Alert>

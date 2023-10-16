@@ -61,8 +61,8 @@ const Navbar = () => {
               'aria-labelledby': 'basic-button',
             }}
           >
-            {courses.map((ele) => (
-              <MenuItem onClick={handleClose}><Link to={ele.url}>{ele.course}</Link></MenuItem>
+            {courses.map((ele,index) => (
+              <MenuItem onClick={handleClose} key={index}><Link to={ele.url} key={ele.course}>{ele.course}</Link></MenuItem>
             ))}
           </Menu>
           <div>
@@ -117,8 +117,8 @@ const Navbar = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    {courses.map((ele) => (
-                      <MenuItem onClick={handleClose}><Link to={ele.url}>{ele.course}</Link></MenuItem>
+                    {courses.map((ele,index) => (
+                      <MenuItem onClick={handleClose} key={ele.course}><Link to={ele.url} key={index}>{ele.course}</Link></MenuItem>
                     ))}
                   </Typography>
                 </AccordionDetails>
