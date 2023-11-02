@@ -9,6 +9,7 @@ import Footer from '../AllMainComponents/CommonComponent/Footer';
 import About from '../AllMainComponents/Components/About';
 import Legal from '../AllMainComponents/Components/Legal'
 import Contact from '../AllMainComponents/Components/contact';
+import BlogPost from '../AllMainComponents/Components/BlogPost';
 
 
 const AppRouter = () => {
@@ -24,6 +25,7 @@ const AppRouter = () => {
         <Route path='/terms-conditions' element={<Legal type="terms" />} />
         <Route path='/contact' element={ <Contact/>} />
         <Route path='/privacy-policy' element={<Legal type="privacy" />} />
+        <Route path='/blog/:handle' element={<BlogPost />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
       <Footer />

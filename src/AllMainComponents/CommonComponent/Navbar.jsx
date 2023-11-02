@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Styles from '../../styles/Navbar.module.css';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { Button } from '@mui/material';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -31,21 +32,22 @@ const Navbar = () => {
       <div className={Styles.navbarContainer}>
         <div>
           <Link to="/">
-            <span className='color-red'>#</span>
-            <span>node</span>
+            <span className='color-red'></span>
+            <span>Node</span>
             <span className='color-red'>S</span>
             <span>chool</span>
           </Link>
         </div>
+
         <div className={Styles.navbarElementDesktop}>
-          <div>
+        <div className={Styles.menuBtn}>
             <Link to="/">
             <span>H</span>
             <span className='color-red'>o</span>
             <span>me</span>
             </Link>
           </div>
-          <div onClick={handleClick}>
+          <div onClick={handleClick} className={Styles.menuBtn}>
             <span>Co</span>
             <span className='color-red'>u</span>
             <span>rses</span>
@@ -65,13 +67,24 @@ const Navbar = () => {
               <MenuItem onClick={handleClose} key={index}><Link to={ele.url} key={ele.course}>{ele.course}</Link></MenuItem>
             ))}
           </Menu>
-          <div>
+
+          <div className={Styles.menuBtn}>
+            <Link to="/blogs">
+            <span>B</span>
+            <span className='color-red'>lo</span>
+            <span>gs</span>
+            </Link>
+          </div>
+          <div className={Styles.menuBtn}>
             <Link to="/about">
             <span>A</span>
             <span className='color-red'>b</span>
             <span>out</span>
             </Link>
-          </div>
+          </div> 
+          {/* <div> */}
+            <Button variant="outlined" ><Link to='/contact'>Enroll Now</Link></Button>
+          {/* </div> */}
         </div>
       </div>
       <div className={Styles.mobileNavbar}>
