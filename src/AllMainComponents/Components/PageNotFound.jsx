@@ -16,7 +16,7 @@ const PageNotFound = () => {
                   Look like you're lost
                 </h3>
 
-                <p>the page you are looking for not avaible!</p>
+                <p>The page you're looking is currently not available!</p>
 
                 <Link to="/" className={Style.link_404}>Go to Home</Link>
               </div>

@@ -143,8 +143,8 @@ function Legal({ type }) {
             <>
                 <SeoHelmet
                     title="Terms and Conditions | Nodeschool.in"
-                    desc="Terms and Terms and Conditions"
-                    href="https://nodeschool.in/terms-conditions" />
+                    href="https://nodeschool.in/terms-conditions"
+                    desc="Terms and Terms and Conditions" />
                 <HtmlParser htmlString={pages.termscondition} />
             </>
         )
@@ -155,9 +155,10 @@ function Legal({ type }) {
         return(
             <>
             <SeoHelmet
-                    title="Privacy Policy| Nodeschool.in"
+                    title="Privacy Policy | Nodeschool.in"
+                    href="https://nodeschool.in/privacy-policy"
                     desc="privacy policy"
-                    href="https://nodeschool.in/privacy-policy" />
+                     />
             <HtmlParser htmlString={pages.policy} />
             </>
         ) 

@@ -1,5 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins:wght@300&family=Roboto+Condensed&display=swap');
 
+.BlogsContainer {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    padding: 2rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1.2rem; 
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.BlogChildContainer {
+    width: 35%;
+}
+
+
+.BlogChildContainer > div {
+    font-size: larger;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.format {
+    border-bottom: 2px solid  blue;
+}
+.format:hover {
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+
 .container{
     display: flex;
     flex-direction: row;
@@ -9,10 +40,75 @@
     margin-bottom: 1rem;
     font-size: 1.2rem;
     font-family: 'Roboto Condensed', sans-serif;
-
 }
+
+.content { width: 70%;  padding: 1rem }
+
+.content div{
+    padding: 1rem;
+}
+.content div div {
+    padding: 16px 0 16px 16px;
+    background-color: #FAFAFC;
+}
+
+.content div div ol {
+    padding-left: 1.5rem;
+}
+
 
 pre{
    font-size: 1rem;
 }
 
+
+
+@media only screen and (max-width: 1060px) and (min-width: 100px) {
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    .content{width: 100%;}
+    .content div div{
+        padding: 1px;
+    }
+    .BlogsContainer {
+        display: flex;
+        flex-direction: row;
+        width: 95%;
+        padding: 2rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        font-size: 1.2rem; 
+        flex-wrap: wrap;
+    }
+    img {
+        height:100%;
+        max-width:100%;
+      }
+    .BlogChildContainer {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .BlogChildContainer > div {
+        font-size: 1.3rem;
+        font-weight: bold;
+        font-family: 'Roboto Condensed', sans-serif;
+        margin-bottom: 5px;
+    }
+
+    .format {
+        border-bottom: 2px solid  blue;
+    }
+
+    .format:hover {
+        color: red;
+        border-bottom: 2px solid red;
+    }
+  }

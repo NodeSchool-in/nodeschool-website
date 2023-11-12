@@ -41,9 +41,8 @@ const BlogPost = () => {
 
   return pageNotFound ? <PageNotFound /> : (
     <div className={Style.container}>
-    {/* <SeoHelmet title={seo.title} href={seo.url} desc={seo.description}/> */}
-    <div style={{width: '75%',  padding: '1rem'}}>
-       
+    <SeoHelmet title={blog.title} href={`https://nodeschool.in/blogs/${blog.slug}`} desc={blog.description}/>
+    <div className={`${Style.content}`}>
         <HtmlParser htmlString={blog.body} />
     </div>
     </div>

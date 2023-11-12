@@ -92,8 +92,8 @@ const Footer = () => {
     <div className={Style.footerContainer}>
       <div className={Style.nodeSchoolBanner}>
         <div className={Style.nodeSchoolBanner2}>
-          <span className='color-red'>#</span>
-          <span>node</span>
+          {/* <span className='color-red'>#</span> */}
+          <span>Node</span>
           <span className='color-red'>S</span>
           <span>chool</span>
         </div>
@@ -142,8 +142,8 @@ const RightReserved = () => {
       <span className={`f12 ${Style.rightsText}`}>
         @2023 All Rights Reserved
       </span>
-      <span className='color-red'>#</span>
-      <span>node</span>
+      {/* <span className='color-red'>#</span> */}
+      <span>Node</span>
       <span className='color-red'>S</span>
       <span>chool</span>
     </div>
