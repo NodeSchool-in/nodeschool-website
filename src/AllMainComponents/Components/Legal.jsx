@@ -133,7 +133,15 @@ function Legal({ type }) {
         of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to
         promptly remove such information from our records.
     </p>
-</div>`
+</div>`,
+       refund: `
+       <div style="display:flex;flex-direction:column; padding:1rem; margin:5px; margin-bottom:1.5rem">
+       <h2>Cancellation & Refund Policy</h2>
+       <div style="font-size:0.9rem;">Last updated: Oct 07, 2023</div> <br />
+       <p style="font-weight:normal; font-size:0.9rem ">
+           There is a Strict no refund & no cancellation policy. You are entitled to a refund only in the case where you have not been allotted the course after payment.
+       </p>
+   </div>`
     }
     useEffect(()=>{
         window.scrollTo(0, 0);
@@ -148,8 +156,17 @@ function Legal({ type }) {
                 <HtmlParser htmlString={pages.termscondition} />
             </>
         )
-    } else if (type == 'refund') {
-        return <HtmlParser htmlString={pages.termscondition} />
+    } else if (type == 'refund') {                                 
+        return (  
+            <>        
+            <SeoHelmet
+            title="Refund Policy | Nodeschool.in"
+            href="https://nodeschool.in/refund"
+            desc="privacy policy"
+             />
+             
+            <HtmlParser htmlString={pages.refund} />
+             </>  )
     } else if (type == 'privacy') {
 
         return(
