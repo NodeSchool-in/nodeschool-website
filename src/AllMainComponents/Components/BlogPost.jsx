@@ -4,8 +4,8 @@ import { api_blogpost } from "../ApiOperation/ApisManagement/post"
 import SeoHelmet from '../CommonComponent/SeoHelmet';
 import HtmlParser from '../CommonComponent/HtmlParser';
 import Style from '../../styles/Blog.module.css'
-import hljs from 'highlight.js/lib/core';
-import javascript from 'highlight.js/lib/languages/javascript';
+import hljs from 'highlight.js';
+// import javascript from 'highlight.js/lib/languages/javascript';
 import "highlight.js/styles/github-dark.css";
 import PageNotFound from '../Components/PageNotFound';
 import BlogSheemer from '../CommonComponent/BlogSheemer';
@@ -28,7 +28,7 @@ const BlogPost = () => {
   }
 
   useEffect(() => {
-    hljs.registerLanguage('javascript', javascript);
+    // hljs.registerLanguage('javascript', javascript);
     hljs.highlightAll()
   })
 
