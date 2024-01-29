@@ -3,6 +3,4 @@ https://nodeschool.in/about
 https://nodeschool.in/contact
 https://nodeschool.in/terms-conditions
 https://nodeschool.in/privacy-policy
-https://nodeschool.in/refund-policy
 https://nodeschool.in/course/nodejs-backend-development-masterclass
-https://nodeschool.in/blogs/javascript-syntax-highlighter-not-working

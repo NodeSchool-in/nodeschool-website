@@ -1,0 +1,450 @@
+.containerPay {
+  display: flex;
+  padding: 50px;
+  justify-content: center;
+}
+
+
+.userContainer {
+  flex-direction: column;
+  width: 45%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 25px;
+
+}
+.mockHeaderPay {
+  display: flex;
+  background-color: #EDE7F6;
+  justify-content: space-around;
+  border-radius: 25px 25px 0 0;
+  padding: 10px;
+}
+
+.mockHeaderPay>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.mockHeaderPay>div>h1 {
+  font-size: 1.5rem;
+}
+
+.mockHeaderPay>img {
+  width: 80px;
+  height: 80px;
+}
+
+
+.finalSubmition {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  background-color: #EDE7F6;
+  border-radius: 0 0 20px 20px;
+}
+
+.finalSubmition>div {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.finalSubmition .sumbit {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  border-radius: 0 0 20px 0;
+}
+
+.courseDetailPay {
+  padding: 15px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #789461;
+  border-radius: 10px;
+  background-color: #DBE7C9;
+  color: green;
+}
+.courseInfo {
+  display: flex;
+  font-weight: bold;
+  font-size: 0.9rem;
+  ;
+}
+
+.editEvent:hover {
+  cursor: pointer;
+}
+
+.discount {
+  padding: 15px;
+}
+
+.discount .apply {
+  display: flex;
+  justify-content: space-between;
+}
+
+.discount .apply>input {
+  padding: 5px;
+  border-style: dashed;
+  width: 70%;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+
+.discount .apply>input:focus {
+  outline: 2px solid white;
+  /* oranges! yey */
+}
+
+.discount .apply> a {
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  width: 20%;
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.discount .apply>a:hover {
+  cursor: pointer;
+}
+
+
+.discount .apply>input:focus {
+  outline: 2px solid white;
+  /* oranges! yey */
+}
+
+.couponAppliedAlert {
+  display: flex;
+  margin: 0 10px 0 10px;
+  padding: 10px;
+  background-color: #FFEBD8;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.couponAppliedAlert>div {
+  padding: 5px;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 10px;
+  gap: 10px;
+}
+
+.userDetails .inputSection {
+  padding: 5px;
+}
+
+.userDetails .inputSection>label>span {
+  color: red;
+}
+
+.userDetails .inputSection>input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #EEF0E5;
+}
+
+.whatElseYouGet {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #EEF0E5;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.whatElseYouGet .context{
+  width: 60%;
+}
+
+.whatElseYouGet .button{
+  flex: 1;
+  justify-content: center;
+  padding: 20px;
+}
+.whatElseYouGet .button > div{
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.whatElseYouGet .button > div:hover{
+  cursor: pointer;
+}
+
+.courseDetail ul {
+  list-style-type: none;
+  gap: 5px;
+  font-size: 1.03rem;
+
+}
+
+.courseDetail ul li {
+  margin: 10px;
+}
+
+.availableOffers {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.availableOffers .offer {
+  display: flex;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.availableOffers .WhatYouGet {
+  display: flex;
+  padding: 20px;
+  width: 40%;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.availableOffers .offer .offerImage{
+  width: 20%;
+  padding: 10px;
+}
+.availableOffers .offer .offerImage img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.availableOffers .offer .offerText {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.availableOffers .offer .offerText>span {
+  border-style: dotted;
+  color: red;
+  border-color: red;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: small;
+  width: max-content;
+  text-align: center;
+  font-weight: bold;
+}
+
+.availableOffers .offer .offerText>span:hover {
+  border-style: dashed;
+  cursor: pointer;
+  background-color: #FDF0D1;
+}
+
+
+.confirm:hover {
+  cursor: pointer;
+}
+
+.disable{
+  pointer-events: none;
+}
+
+.enable{
+  pointer-events: all;
+}
+
+
+@media only screen and (max-width: 1060px) and (min-width: 100px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0px;
+  }
+
+  .containerPay {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 0px;
+    bottom: -10%;
+  }
+
+  .userContainer {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0px;
+    border-radius: 0px;
+  }
+
+  .mockHeader {
+    border-radius: 0px
+  }
+
+  .mockHeaderPay {
+    border-radius: 0px
+  }
+
+  .courseDetailPay {
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #789461;
+    border-radius: 10px;
+    background-color: #DBE7C9;
+    color: green;
+  }
+
+  .courseInfo {
+    display: flex;
+    font-weight: bold;
+    font-size: 0.9rem;
+    ;
+  }
+
+  .editEvent:hover {
+    cursor: pointer;
+  }
+
+  .discount {
+    padding: 15px;
+  }
+
+  .discount .apply {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .discount .apply>input {
+    border-style: dashed;
+    width: 72%;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+
+  .discount .apply>input:focus {
+    outline: 2px solid white;
+    /* oranges! yey */
+  }
+
+  .discount .apply>a {
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    width: 25%;
+    font-size: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+  .discount .apply>a:hover {
+    cursor: pointer;
+  }
+
+  .userDetails {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px;
+    gap: 10px;
+  }
+
+  .userDetails .inputSection {
+    padding: 5px;
+  }
+
+  .userDetails .inputSection>label>span {
+    color: red;
+  }
+
+  .userDetails .inputSection>input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid #EEF0E5;
+  }
+
+  .finalSubmition {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    z-index: 10;
+    position: fixed;
+    overflow: auto;
+    bottom: 0;
+    background-color: #EDE7F6;
+    border-radius: 0px;
+  }
+
+  .finalSubmition>div {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  }
+
+  .finalSubmition .sumbit {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 0px;
+  }
+
+  .whatElseYouGet {
+    margin: 10px;
+    padding: 10px;
+    margin-bottom: 100px;
+    background-color: #EEF0E5;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  }
+
+  .availableOffers .offer .offerImage{
+  width: 20%;
+  padding: 10px;
+}
+.availableOffers .offer .offerImage img {
+  width: 100%;
+  height: 100%;
+
+}
+}
