@@ -7,10 +7,10 @@ import bannerImage from '../../svg/profileImage.png';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { getProductByHandle } from "../../AllMainComponents/ApiOperation/ApisManagement/mock"
-import { storeMockCart} from "../ApiOperation/ApisManagement/cart"
+import { storeMockCart } from "../ApiOperation/ApisManagement/cart"
 import PageNotFound from './PageNotFound';
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate}  from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 function InterviewPage() {
     const nevigate = useNavigate();
     let { handle } = useParams();
@@ -64,12 +64,12 @@ function InterviewPage() {
             localStorage.setItem('deviceId', id);
         }
         const finalData = {
-             "diviceId": localStorage.getItem('deviceId'),
-             "slotDate": selectedDate, "slotTime": selectedTime,
-             "skill": selectedCourse,
-             "productId": product.id,
-             "productTitle": product.title
-            };
+            "diviceId": localStorage.getItem('deviceId'),
+            "slotDate": selectedDate, "slotTime": selectedTime,
+            "skill": selectedCourse,
+            "productId": product.id,
+            "productTitle": product.title
+        };
         console.log("finalData", finalData)
         await storeMockCart(finalData)
         nevigate(`/mock-interview/${product.handle}/pay`)
@@ -102,15 +102,14 @@ function InterviewPage() {
                     </div>
 
                     <div className={Style.courseDetail}>
-                        <h3>Why should you take this mock interview?</h3>
+                        <h2>Why should you take this mock interview?</h2>
                         <ul>
                             {product?.whatyouWillGet?.map((item, index) => <li key={index}><CheckCircleIcon style={{ color: "green", fontSize: "15px" }}></CheckCircleIcon> {item}</li>)}
 
                         </ul>
 
-                        <div className={Style.availableOffers}>
-                            <h3>What else you'll get ?</h3>
-
+                        <h2>What else you'll get ?</h2>
+                        <div className={Style.moreOfferings}>
                             <div className={Style.WhatYouGet}>
                                 <div className={Style.offerText}>
                                     <span>Free javascript interview Preperation Ebook</span>
@@ -119,11 +118,17 @@ function InterviewPage() {
                                 </div>
                             </div>
 
-
+                            <div className={Style.WhatYouGet}>
+                                <div className={Style.offerText}>
+                                    <span>Get free session recording</span>
+                                    <br></br>
+                                    <span></span>
+                                </div>
+                            </div>
                         </div>
 
                         <div className={Style.availableOffers}>
-                            <h3>Additional offers / Promos for you!</h3>
+                            <h2>More Offerings</h2>
                             {product?.availableOffers?.map((offer, index) => {
                                 return (
                                     <div className={Style.offer}>
@@ -152,7 +157,7 @@ function InterviewPage() {
                     <br></br>
 
                     <div onClick={bookTheSlot} className={Style.confirm}>
-                       {loading ? 'Loading...' : 'Confirm Details'}
+                        {loading ? 'Loading...' : 'Confirm Details'}
                     </div>
                 </div>
 

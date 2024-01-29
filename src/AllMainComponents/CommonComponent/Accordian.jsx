@@ -17,13 +17,13 @@ export default function Accordian({ offers , setCoupon , setStateOnApply }) {
   }
   return (
     <div>
-      <Accordion>
+      <Accordion style={{boxShadow:"rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px" }}>
         <AccordionSummary
           expandIcon={<ArrowDropDownIcon />}
           aria-controls="panel1-content"
           id="panel1-header"
         >
-          <Typography>Additional offers / Promos for you</Typography>
+          <Typography fontSize="14px">Additional offers / Promos for you</Typography>
         </AccordionSummary>
         <AccordionDetails>
           {offers?.map((offer, index) => {
