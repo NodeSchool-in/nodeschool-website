@@ -243,10 +243,11 @@
 .availableOffers .offer .offerImage img {
   width: 100%;
   height: 100%;
-
 }
 
 .availableOffers .offer .offerText {
+  margin-left: 5px;
+  width: 100%;
   padding: 5px;
   display: flex;
   flex-direction: column;
@@ -441,12 +442,11 @@
   }
 
 .availableOffers .offer .offerImage{
-  width: 20%;
-  padding: 10px;
+  padding: 0px;
 }
 .availableOffers .offer .offerImage img {
-  width: 100%;
-  height: 100%;
-
+  width: 200px;
+  height: 100px;
 }
+
 }
