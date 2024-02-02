@@ -34,6 +34,7 @@ function MockInterview() {
     }
 
     useEffect(function () {
+        window.scrollTo(0, 0);
         console.log("Hitting useEffect")
         updateUseState()
     }, [])

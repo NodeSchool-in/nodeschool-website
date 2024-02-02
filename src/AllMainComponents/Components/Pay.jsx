@@ -74,6 +74,7 @@ function Pay() {
         nevigate(`/mock-interview/${product.handle}/pay`)
     }
     useEffect(() => {
+        window.scrollTo(0, 0);
         setUseState()
     }, [])
 
