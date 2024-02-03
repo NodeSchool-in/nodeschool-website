@@ -16,7 +16,7 @@ function onClick(){
         <div className={Style.leftSide}>
           <div className={Style.header}>
             <WorkHistoryRoundedIcon fontSize="large" />
-            <h3>Thank you Prashant, for booking with us!!</h3>
+            <h3>Thank you for booking with us!!</h3>
             <h3>Your order is currently under process!</h3>
             <p>You will receive the confirmation on your email Id and mobile number in a few minutes. for queries write us on <span style={{fontWeight:"bold"}}>support@nodeschool.in</span></p>
             <div onClick={onClick}>Explore What's New</div>
