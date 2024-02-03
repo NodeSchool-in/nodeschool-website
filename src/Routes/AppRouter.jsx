@@ -15,6 +15,7 @@ import Blog from '../AllMainComponents/Components/Blog'
 import MockInterview from '../AllMainComponents/Components/MockInterview';
 import InterviewPage from '../AllMainComponents/Components/InterviewPage';
 import Pay from '../AllMainComponents/Components/Pay';
+import ThankYou from '../AllMainComponents/Components/ThankYou';
 
 const AppRouter = () => {
   let location = useLocation();
@@ -35,6 +36,7 @@ const AppRouter = () => {
         <Route path='/mock-interview' element={<MockInterview />} />
         <Route path='/mock-interview/:handle' element={<InterviewPage />} />
         <Route path='/mock-interview/:handle/pay' element={<Pay />} />
+        <Route path='/thankyou' element={<ThankYou />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
       {!location.pathname.includes("mock") ? <Footer /> : ''}

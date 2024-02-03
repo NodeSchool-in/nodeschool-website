@@ -1,0 +1,102 @@
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: #EEEDEB;
+    padding: 20px;
+}
+
+.ThankYouContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: white;
+    gap: 10px;
+    justify-content: space-between;
+
+}
+
+.leftSide {
+    width: 60%;
+}
+
+.leftSide .header {
+    padding: 25px;
+    border-radius: 20px;
+    background-color: #EEEDEB;
+}
+
+.leftSide .header>div {
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    width: max-content;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.leftSide .header>div:hover {
+    cursor: pointer;
+}
+
+.rightSide {
+    padding: 8px;
+    width: 30%;
+}
+
+.invoice {
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.invoice>div {
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+}
+
+.invoice .total {
+    margin-top: 10px;
+    color: #191919;
+    border-top: 1px solid gray;
+    border-top-style: dotted;
+   
+}
+
+@media only screen and (max-width: 1060px) and (min-width: 100px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #EEEDEB;
+        padding: 10px;
+    }
+
+    .ThankYouContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: white;
+        gap: 10px;
+        justify-content: space-between;
+       
+    
+    }
+
+    .leftSide {
+        width: 100%;
+        
+    }
+    
+    .rightSide {
+        padding: 8px;
+        width: 100%;
+    }
+    
+}

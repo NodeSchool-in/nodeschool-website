@@ -67,7 +67,13 @@ const Navbar = () => {
               <MenuItem onClick={handleClose} key={index}><Link to={ele.url} key={ele.course}>{ele.course}</Link></MenuItem>
             ))}
           </Menu>
-
+          <div className={Styles.menuBtn}>
+            <Link to="/mock-interview">
+            <span>M</span>
+            <span className='color-red'>o</span>
+            <span>ck</span>
+            </Link>
+          </div>
           <div className={Styles.menuBtn}>
             <Link to="/blogs">
             <span>B</span>
@@ -96,8 +102,7 @@ const Navbar = () => {
           >
             <Typography>
               <div className={Styles.navSize}>
-                <span className='color-red'>#</span>
-                <span>node</span>
+                <span>Node</span>
                 <span className='color-red'>S</span>
                 <span>chool</span>
               </div>
@@ -136,6 +141,13 @@ const Navbar = () => {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
+              <div className={Styles.eachContain}>
+                <Link to="/mock-interview">
+                <span>M</span>
+                <span className='color-red'>o</span>
+                <span>ck</span>
+                </Link>
+              </div>
               <div className={Styles.eachContain}>
                 <Link to="/about">
                 <span>A</span>

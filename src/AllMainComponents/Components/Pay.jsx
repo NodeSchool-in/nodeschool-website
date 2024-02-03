@@ -6,10 +6,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import { getCartById, applyDiscount, removeDiscount } from "../ApiOperation/ApisManagement/cart"
 import PageNotFound from './PageNotFound';
 import Accordian from '../CommonComponent/Accordian';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Alert } from '@mui/material';
 function Pay() {
     const nevigate = useNavigate();
     let { handle } = useParams();
@@ -70,8 +68,8 @@ function Pay() {
         setUseState()
     }
     async function bookTheSlot() {
-        setLoading(true)
-        nevigate(`/mock-interview/${product.handle}/pay`)
+        // setLoading(true)
+        nevigate("/thankyou")
     }
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -163,7 +161,7 @@ function Pay() {
                         <div className={Style.price}>
                             <div><span className='mrp' style={{ fontSize: "0.9rem" }}><s>₹{invoice?.subtotal}</s> &nbsp; </span><strong style={{ color: 'green' }}>  ₹{invoice?.cartTotal}</strong></div>
                         </div>
-                        <div className={Style.sumbit}>
+                        <div className={Style.sumbit} onClick={bookTheSlot}>
                             Confirm and Pay
                         </div>
                     </div>
