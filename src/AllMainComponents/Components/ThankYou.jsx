@@ -8,14 +8,18 @@ function ThankYou() {
   const nevigate = useNavigate();
   const { orderId } = useParams();
   const [invoice, setInvoice] = useState({})
+  const [discount, setDiscount] = useState(0)
   let [pageNotFound, setPageNotFound] = useState(false);
 
   async function setUseState() {
     const order = await thankYouPageApiCall(orderId)
-    if(order.data.statusId != 1){
-        setPageNotFound(true)
+    if (order.data.statusId != 1) {
+      setPageNotFound(true)
     }
     setInvoice(order.data.data)
+    const invoice = order.data.data;
+    const discount = ((invoice.subtotal - invoice.cartTotal)+invoice.discount.amount)
+    setDiscount(discount)
   }
   function onClick() {
     nevigate(`/`)
@@ -24,7 +28,7 @@ function ThankYou() {
     window.scrollTo(0, 0);
     setUseState()
   }, [])
-  return  pageNotFound ? <PageNotFound /> : (
+  return pageNotFound ? <PageNotFound /> : (
     <div className={Style.container}>
       <div className={Style.ThankYouContainer}>
         <div className={Style.leftSide}>
@@ -45,7 +49,7 @@ function ThankYou() {
             </div>
             <div>
               <span>Savings</span>
-              <span style={{ color: "green" }}>- ₹{invoice?.discount?.amount}</span>
+              <span style={{ color: "green" }}>- ₹{discount}</span>
             </div>
 
             <div className={Style.total}>
