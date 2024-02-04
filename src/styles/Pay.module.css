@@ -285,6 +285,15 @@
   pointer-events: all;
 }
 
+.finalSubmition .sumbit:hover{
+  cursor: pointer;
+}
+
+.disclamer{
+  display: flex;
+  padding: 5px;
+  background-color: #D2E3C8;
+}
 
 @media only screen and (max-width: 1060px) and (min-width: 100px) {
   .container {
@@ -438,11 +447,13 @@
   .whatElseYouGet {
     margin: 10px;
     padding: 10px;
-    margin-bottom: 100px;
+   
     background-color: #EEF0E5;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   }
-
+.disclamer{
+  margin-bottom: 60px;
+}
 .availableOffers .offer .offerImage{
   padding: 0px;
 }

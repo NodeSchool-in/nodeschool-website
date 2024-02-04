@@ -1,7 +1,10 @@
 import Style from "../../styles/Pay.module.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import bannerImage from '../../svg/profileImage.png';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import CelebrationIcon from '@mui/icons-material/Celebration';
+import InfoIcon from '@mui/icons-material/Info';
 import EditIcon from '@mui/icons-material/Edit';
 import { getCartById, applyDiscount, removeDiscount } from "../ApiOperation/ApisManagement/cart"
 import { createCustomer } from "../ApiOperation/ApisManagement/customer"
@@ -13,7 +16,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 function Pay() {
     const nevigate = useNavigate();
     let { handle } = useParams();
-    const formInitialValues = { name: "", email: "", linkedInUrl: "", experience: "", phone:""};
+    const formInitialValues = { name: "", email: "", linkedInUrl: "", experience: "", phone: "" };
     let [discountBug, setDiscountBug] = useState(null)
     let [coupon, setCoupon] = useState(null);
     let [cart, setCart] = useState([]);
@@ -44,8 +47,8 @@ function Pay() {
     }
 
     function onCouponChange(e) {
-        const code = e?.target?.value || e;
-        console.log("onCouponChange code", code)
+        const code = e.hasOwnProperty("target") ? e?.target?.value : e;
+        // console.log("onCouponChange code", code)
         setCoupon(code)
     }
 
@@ -72,55 +75,63 @@ function Pay() {
         setFormData({ ...formData, [name]: value })
     }
     const validate = (object) => {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const errorObject = {}
         if (object.name.trim() == "") {
-            errorObject.name = "Your name is required!"
+            errorObject.name = "Your name is required"
         }
         if (object.email.trim() == "") {
-            errorObject.email = "Email is required!"
+            errorObject.email = "Email is required"
+        } else if (!emailPattern.test(object.email.trim())) {
+            errorObject.email = "please enter the valid email"
         }
         if (object.phone.trim() == "") {
-            errorObject.phone = "phone is required!"
-        }else if(object.phone.trim().length < 10 || object.phone.trim().length > 10){
-            errorObject.phone = "please enter the valid phone!"
+            errorObject.phone = "phone is required"
+        } else if (object.phone.trim().length < 10 || object.phone.trim().length > 10) {
+            errorObject.phone = "please enter the valid phone"
         }
         if (object.experience.trim() == "") {
-            errorObject.experience = "Experience is required!"
+            errorObject.experience = "Experience is required"
         }
         if (object.linkedInUrl.trim() == "") {
-            errorObject.linkedInUrl = "linkedIn url is required!"
+            errorObject.linkedInUrl = "linkedIn url is required"
         }
 
         return errorObject;
     }
     async function bookTheSlot() {
         // setLoading(true)
-        const validatioResult = validate(formData)
-        if (Object.entries(validatioResult).length > 0) {
-            setFormError(validatioResult)
-        } else {
-            const customerPayload = {
-                name: formData.name,
-                email: formData.email,
-                phone: formData.phone,
-                experience: formData.experience
+        try {
+            const validatioResult = validate(formData)
+            if (Object.entries(validatioResult).length > 0) {
+                setFormError(validatioResult)
+            } else {
+                const customerPayload = {
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    experience: formData.experience
+                }
+                const customerRes = await createCustomer(customerPayload);
+                const customer = customerRes.data;
+                if (customer.statusId != 1) {
+                    throw new Error("something went wrong")
+                }
+                const orderPayload = {
+                    customerId: customer.data.customerId,
+                    cartJson: JSON.stringify(cart),
+                    linkedInUrl: formData.linkedInUrl,
+                }
+                const orderRes = await draftOrder(orderPayload)
+                const order = orderRes.data;
+                if (order.statusId != 1) {
+                    throw new Error("something went wrong")
+                }
+                nevigate(`/thankyou/${order.data.orderId}`)
             }
-            const customerRes = await createCustomer(customerPayload);
-            const customer = customerRes.data;
-            if(customer.statusId != 1){
-                console.log("something went wrong")
-            }
-            const orderPayload = {
-                customerId: customer.data.customerId,
-                cartJson: JSON.stringify(cart),
-                linkedInUrl: formData.linkedInUrl,
-            }
-            const orderRes = await draftOrder(orderPayload)
-            const order = orderRes.data;
-            if(order.statusId != 1){
-                console.log("something went wrong")
-            }
-            nevigate("/thankyou")
+        } catch (error) {
+            console.error('API request failed:', error);
+            toast.error('Something went wrong!',);
         }
 
     }
@@ -211,14 +222,19 @@ function Pay() {
 
                             <div> Add</div>
                         </div>
-                    </div>
 
+                    </div>
+                    <div className={Style.disclamer}>
+                        <InfoIcon ></InfoIcon>
+                        <p>&nbsp;currently we dont accept online payments! pay during interview.</p>
+                    </div>
                     {/** !submit */}
 
                     <div className={Style.finalSubmition}>
                         <div className={Style.price}>
                             <div><span className='mrp' style={{ fontSize: "0.9rem" }}><s>₹{invoice?.subtotal}</s> &nbsp; </span><strong style={{ color: 'green' }}>  ₹{invoice?.cartTotal}</strong></div>
                         </div>
+
                         <div className={Style.sumbit} onClick={bookTheSlot}>
                             Confirm and Pay
                         </div>
@@ -226,6 +242,7 @@ function Pay() {
 
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

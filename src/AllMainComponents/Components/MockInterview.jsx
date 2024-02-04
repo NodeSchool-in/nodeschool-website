@@ -14,6 +14,9 @@ function MockInterview() {
 
     async function updateUseState() {
         const userData = await getMockPage();
+        if(userData.data.statusId !=1){
+            setPageNotFound(true)
+        }
         if (userData.data) {
             setMockUserData(userData.data.data)
             setProducts(userData.data.data.products)
@@ -40,7 +43,7 @@ function MockInterview() {
     }, [])
 
     //if (mockUserData.length <= 0 && !pageNotFound) return <div><BlogSheemer /></div>;
-    return (
+    return  pageNotFound ? <PageNotFound /> :(
         <>
             <div className={Style.wrapper}>
                 <div className={Style.sidebar}>

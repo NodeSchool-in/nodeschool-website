@@ -25,7 +25,7 @@ function InterviewPage() {
 
     const setUseState = async () => {
         const productData = await getProductByHandle(handle)
-        if (productData.data.data) {
+        if (productData.data.statusId == 1) {
             setProduct(productData.data.data)
         } else {
             setPageNotFound(true)
@@ -45,6 +45,7 @@ function InterviewPage() {
 
     }
     function updateSelectedDate(date) {
+        // console.log("date",date)
         setSelectedDate(date)
         setselectedDay(getDayFromDate(date))
     }
@@ -77,11 +78,14 @@ function InterviewPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
         setUseState()
+        
     }, [])
 
     return pageNotFound ? <PageNotFound /> : (
         <>
-            {console.log("product", product)}
+            {/* {console.log("product", product)}
+            {console.log({selectedDate, selectedTime, selectedDay})} */}
+
             <div className={Style.container}>
                 <div className={Style.userContainer}>
                     <div className={Style.mockHeader}>

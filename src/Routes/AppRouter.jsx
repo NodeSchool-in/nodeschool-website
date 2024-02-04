@@ -36,7 +36,7 @@ const AppRouter = () => {
         <Route path='/mock-interview' element={<MockInterview />} />
         <Route path='/mock-interview/:handle' element={<InterviewPage />} />
         <Route path='/mock-interview/:handle/pay' element={<Pay />} />
-        <Route path='/thankyou' element={<ThankYou />} />
+        <Route path='/thankyou/:orderId' element={<ThankYou />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
       {!location.pathname.includes("mock") ? <Footer /> : ''}

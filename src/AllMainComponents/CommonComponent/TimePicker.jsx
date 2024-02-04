@@ -1,6 +1,7 @@
 
-import { useState } from "react"
+import { useState ,useEffect } from "react"
 import Style from "../../styles/DatePicker.module.css"
+
 
 
 function TimePicker({selectedDay , setState}) {
@@ -14,7 +15,9 @@ function TimePicker({selectedDay , setState}) {
     setState(e.target.innerHTML)
   }
 
-
+  useEffect(()=>{
+    setState("9:00 PM")
+  },[])
 
   return (
     <>

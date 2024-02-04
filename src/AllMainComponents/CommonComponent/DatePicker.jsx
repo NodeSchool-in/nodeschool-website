@@ -48,10 +48,12 @@ function DatePicker({setState}) {
         })
         console.log("dateData.length", dateData)
         setDate(dateData);
+        setState(dateData[0].fullDate)
+        setdateSelectedIndex(0)   
     }
 
     useEffect(() => {
-        formatDates();
+        formatDates(); 
     }, []);
 
     const nextSlide = () => {
