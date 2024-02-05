@@ -13,6 +13,7 @@ import PageNotFound from './PageNotFound';
 import Accordian from '../CommonComponent/Accordian';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { firebase } from "../../utils/firebase"
 function Pay() {
     const nevigate = useNavigate();
     let { handle } = useParams();
@@ -37,6 +38,14 @@ function Pay() {
             setProduct(cart.data.data.line_items)
             setInvoice(cart.data.data.invoice)
             setCoupon(cart.data.data.invoice.discount.code)
+            let tempCart = cart.data.data;
+            firebase.logEvent(firebase.analytics, "checkout_view", {
+                "page_path": `/mock-interview/${handle}/pay`,
+                "slotDate":tempCart.slotDate,
+                "slotTime":tempCart.slotTime,
+                "productTitle": tempCart.productTitle,
+                "invoice": tempCart.invoice
+            })
         } else {
             setPageNotFound(true)
         }

@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react"
 import Style from '../../styles/Mock.module.css'; // !CSS
-import Footer from '../CommonComponent/Footer';
 import bannerImage from '../../svg/profileImage.png';
 import MockInterviewCard from '../CommonComponent/MockInterviewCard';
-import BlogSheemer from "../CommonComponent/BlogSheemer";
-
 import { getMockPage } from "../ApiOperation/ApisManagement/mock";
+import {firebase} from "../../utils/firebase"
 function MockInterview() {
     let [mockUserData, setMockUserData] = useState([]);
     let [pageNotFound, setPageNotFound] = useState(false);
@@ -14,7 +12,7 @@ function MockInterview() {
 
     async function updateUseState() {
         const userData = await getMockPage();
-        if(userData.data.statusId !=1){
+        if (userData.data.statusId != 1) {
             setPageNotFound(true)
         }
         if (userData.data) {
@@ -25,25 +23,26 @@ function MockInterview() {
         }
     }
 
-    function filterProduct(e){
-       if(e.target.getAttribute("type") != "all"){
-        const filteredProduct = mockUserData.products.filter(product=> product.type == e.target.getAttribute("type"))
-        setProducts(filteredProduct)
-        setFilter(e.target.getAttribute("type"))
-       }else{
-        setProducts(mockUserData.products)
-        setFilter("all")
-       }
+    function filterProduct(e) {
+        if (e.target.getAttribute("type") != "all") {
+            const filteredProduct = mockUserData.products.filter(product => product.type == e.target.getAttribute("type"))
+            setProducts(filteredProduct)
+            setFilter(e.target.getAttribute("type"))
+        } else {
+            setProducts(mockUserData.products)
+            setFilter("all")
+        }
     }
 
     useEffect(function () {
         window.scrollTo(0, 0);
         console.log("Hitting useEffect")
         updateUseState()
+        firebase.logEvent(firebase.analytics, "mock_collection_view", {"page_path": '/mock-interview'})
     }, [])
 
     //if (mockUserData.length <= 0 && !pageNotFound) return <div><BlogSheemer /></div>;
-    return  pageNotFound ? <PageNotFound /> :(
+    return pageNotFound ? <PageNotFound /> : (
         <>
             <div className={Style.wrapper}>
                 <div className={Style.sidebar}>
@@ -59,7 +58,7 @@ function MockInterview() {
                     <div className={Style.filter}>
                         <div onClick={filterProduct} type="all" className={currentFilter == "all" ? Style.selected : Style.notselected}>All</div>
                         <div onClick={filterProduct} type="interview" className={currentFilter == "interview" ? Style.selected : Style.notselected}>1:1 Interview</div>
-                        <div onClick={filterProduct} type="guidance"  className={currentFilter == "guidance" ? Style.selected : Style.notselected}>Guidance</div>
+                        <div onClick={filterProduct} type="guidance" className={currentFilter == "guidance" ? Style.selected : Style.notselected}>Guidance</div>
                     </div>
 
                     <div className={Style.products}>

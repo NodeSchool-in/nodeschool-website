@@ -11,6 +11,7 @@ import { storeMockCart } from "../ApiOperation/ApisManagement/cart"
 import PageNotFound from './PageNotFound';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import {firebase} from "../../utils/firebase"
 function InterviewPage() {
     const nevigate = useNavigate();
     let { handle } = useParams();
@@ -78,7 +79,7 @@ function InterviewPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
         setUseState()
-        
+        firebase.logEvent(firebase.analytics, "mock_product_view", {"page_path": `/mock-interview/${handle}`})
     }, [])
 
     return pageNotFound ? <PageNotFound /> : (
