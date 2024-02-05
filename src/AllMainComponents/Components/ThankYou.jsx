@@ -18,7 +18,7 @@ function ThankYou() {
     }
     setInvoice(order.data.data)
     const invoice = order.data.data;
-    const discount = ((invoice.subtotal - invoice.cartTotal)+invoice.discount.amount)
+    const discount = (invoice.subtotal - invoice.cartTotal);
     setDiscount(discount)
   }
   function onClick() {
