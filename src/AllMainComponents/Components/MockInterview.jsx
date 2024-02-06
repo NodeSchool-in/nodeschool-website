@@ -36,7 +36,6 @@ function MockInterview() {
 
     useEffect(function () {
         window.scrollTo(0, 0);
-        console.log("Hitting useEffect")
         updateUseState()
         firebase.logEvent(firebase.analytics, "mock_collection_view", {"page_path": '/mock-interview'})
     }, [])
@@ -58,7 +57,7 @@ function MockInterview() {
                     <div className={Style.filter}>
                         <div onClick={filterProduct} type="all" className={currentFilter == "all" ? Style.selected : Style.notselected}>All</div>
                         <div onClick={filterProduct} type="interview" className={currentFilter == "interview" ? Style.selected : Style.notselected}>1:1 Interview</div>
-                        <div onClick={filterProduct} type="guidance" className={currentFilter == "guidance" ? Style.selected : Style.notselected}>Guidance</div>
+                        {/* <div onClick={filterProduct} type="guidance" className={currentFilter == "guidance" ? Style.selected : Style.notselected}>Guidance</div> */}
                     </div>
 
                     <div className={Style.products}>
