@@ -102,10 +102,6 @@ function Pay() {
         if (object.experience.trim() == "") {
             errorObject.experience = "Experience is required"
         }
-        if (object.linkedInUrl.trim() == "") {
-            errorObject.linkedInUrl = "linkedIn url is required"
-        }
-
         return errorObject;
     }
     async function bookTheSlot() {
@@ -203,7 +199,7 @@ function Pay() {
                         </div>
 
                         <div className={Style.inputSection}>
-                            <label><span>*</span> Share your LinkedIn Profile</label> <br />
+                            <label><span></span> Share your LinkedIn Profile (optional)</label> <br />
                             <input type='text' name="linkedInUrl" value={formData.linkedInUrl} onChange={onInputFieldChange}></input>
                             <span style={{ color: "red" }}>{formError?.linkedInUrl}</span>
                         </div>
@@ -211,7 +207,7 @@ function Pay() {
 
                         <div className={Style.inputSection}>
                             <label><span>*</span> How much experience do you have?</label> <br />
-                            <input type='text' name="experience" value={formData.experience} onChange={onInputFieldChange}></input>
+                            <input type='number' name="experience" value={formData.experience} onChange={onInputFieldChange}></input>
                             <span style={{ color: "red" }}>{formError?.experience}</span>
                         </div>
 
@@ -229,7 +225,7 @@ function Pay() {
                         </div>
                         <div className={Style.button}>
 
-                            <div> Add</div>
+                            <div style={{backgroundColor: "#D4E7C5"}}> Added</div>
                         </div>
 
                     </div>

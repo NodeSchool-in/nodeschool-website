@@ -4,7 +4,8 @@ import WorkHistoryRoundedIcon from '@mui/icons-material/WorkHistoryRounded';
 import { thankYouPageApiCall } from "../ApiOperation/ApisManagement/order"
 import { useNavigate, useParams } from "react-router-dom"
 import PageNotFound from "./PageNotFound";
-function ThankYou() {
+import { firebase } from "../../utils/firebase"
+function ThankYou() {  
   const nevigate = useNavigate();
   const { orderId } = useParams();
   const [invoice, setInvoice] = useState({})
@@ -20,6 +21,10 @@ function ThankYou() {
     const invoice = order.data.data;
     const discount = (invoice.subtotal - invoice.cartTotal);
     setDiscount(discount)
+    firebase.logEvent(firebase.analytics, "purchase_event", {
+      "page_path": `/thankyou`,
+      "invoice": invoice
+  })
   }
   function onClick() {
     nevigate(`/`)
@@ -27,6 +32,7 @@ function ThankYou() {
   useEffect(() => {
     window.scrollTo(0, 0);
     setUseState()
+    
   }, [])
   return pageNotFound ? <PageNotFound /> : (
     <div className={Style.container}>
